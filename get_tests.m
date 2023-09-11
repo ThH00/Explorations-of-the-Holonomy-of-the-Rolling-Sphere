@@ -1,11 +1,13 @@
 function [test1, test2] = get_tests(phi2, theta)
-%UNTITLED8 Summary of this function goes here
-%   Detailed explanation goes here
+%get_test checks if phi2 and theta values satisfy required equations
+%   phi2: rectangle parameter (side 1 length)
+%   theta: rectangle parameter (side 2 length)
 
-global psi s1 s2 s3 a b c
+global b c
 
 n = length(phi2);
 test1 = zeros(n,2);
+test2 = zeros(n,2);
 for i = 1:n
     test1(i,1) = sin(theta(i,1)/2)^2*sin(phi2(i))-b;
     test1(i,2) = sin(theta(i,2)/2)^2*sin(phi2(i))-b;
@@ -14,4 +16,3 @@ for i = 1:n
 end
 
 end
-
